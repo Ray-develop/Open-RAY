@@ -1,28 +1,68 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-  body {
-    background-color: lightgreen;
-    font-family: Arial;
-  }
-  h1 {
-    color: navy;
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 
-  <title>La meva primera web de juguete</title>
-</head>
-<body>
 
-  <h1>Benvinguts a la meva pàgina de VinyesVelles!</h1>
-  <p>Això és un paràgraf on puc explicar coses.</p>
-  <script>
-  function saluda() {
-    alert("Hola! Gràcies per visitar-me.");
-  }
-</script>
 
-<button onclick="saluda()">Fes clic!</button>
-</body>
-</html>
+
+<div id="app">
+  <header>
+    <li>
+      Open-RAY
+    </li>
+<ul>
+        <li>
+          <a href="#" onclick=
+          "changeContent('home')">
+            Home
+          </a>
+      <li>
+        <a href="#" onclick=
+        "changeContent('home')">
+          Definicions
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick=
+        "changeContent('about')">
+          Tutorials
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick=
+        "changeContent('contact')">
+          Exercisis
+        </a>
+      </li>
+              <li>
+        <a href="#" onclick=
+        "changeContent('contact')">
+          Contactos
+        </a>
+      </li>
+              </li>
+              <li>
+        <a href="#" onclick=
+        "changeContent('contact')">
+          Math-AI
+        </a>
+      </li>
+ <header>OPEN-RAY</header>
+
+
+    </ul>
+  </nav>
+  <main>
+    <div id="content">
+      <p>
+          Aquesta web és creada amb un únic objectiu, complementar al chatbot implementat en la web amb informació auxiliar i exercisis.
+      </p>
+      <p>
+        Visita el meu Github
+       <a href="https://github.com/Ray-develop" target="_blank">
+          aquí
+        </a>.
+      </p>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+
