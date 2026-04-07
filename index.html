@@ -1,68 +1,36 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Open-RAY - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-
-
-
-<div id="app">
-  <header>
-    <li>
-      Open-RAY
-    </li>
-<ul>
-        <li>
-          <a href="#" onclick=
-          "changeContent('home')">
-            Home
-          </a>
-      <li>
-        <a href="#" onclick=
-        "changeContent('home')">
-          Definicions
-        </a>
-      </li>
-      <li>
-        <a href="#" onclick=
-        "changeContent('about')">
-          Tutorials
-        </a>
-      </li>
-      <li>
-        <a href="#" onclick=
-        "changeContent('contact')">
-          Exercisis
-        </a>
-      </li>
-              <li>
-        <a href="#" onclick=
-        "changeContent('contact')">
-          Contactos
-        </a>
-      </li>
-              </li>
-              <li>
-        <a href="#" onclick=
-        "changeContent('contact')">
-          Math-AI
-        </a>
-      </li>
- <header>OPEN-RAY</header>
-
-
-    </ul>
+<header class="topbar">
+  <div class="logo" data-link="home">OPEN-RAY</div>
+  <nav class="nav">
+    <span data-link="home">HOME</span>
+    <span data-link="definicions">DEFINICIONS</span>
+    <span data-link="tutorials">TUTORIALS</span>
+    <span data-link="exercicis">EXERCICIS</span>
+    <span data-link="contacte">CONTACTE</span>
+    <span data-link="mathai">MATH-AI</span>
   </nav>
-  <main>
-    <div id="content">
-      <p>
-          Aquesta web és creada amb un únic objectiu, complementar al chatbot implementat en la web amb informació auxiliar i exercisis.
-      </p>
-      <p>
-        Visita el meu Github
-       <a href="https://github.com/Ray-develop" target="_blank">
-          aquí
-        </a>.
-      </p>
-    </div>
-  </main>
-</div>
-<script src="script.js"></script>
+</header>
 
+<main class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Open-RAY</h1>
+    <span class="hero-tag">Web Auxiliar</span>
+    <p class="hero-text">
+      Aquesta web és creada amb un únic objectiu, complementar al chatbot
+      implementat en la web amb informació auxiliar i exercicis.
+    </p>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
