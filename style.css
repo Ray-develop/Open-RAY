@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+body {
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
