@@ -1,10 +1,6 @@
-/* =============================================
-   Open-RAY — style.css
-   ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ── Variables ── */
 :root {
   --bg:          #0a0a0a;
   --nav-bg:      #1a2b3c;
@@ -20,7 +16,6 @@
   --font-body:   'DM Sans', sans-serif;
 }
 
-/* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -32,7 +27,6 @@ html, body {
   line-height: 1.6;
 }
 
-/* ── Navbar ── */
 .topbar {
   position: fixed;
   top: 16px;
@@ -100,7 +94,7 @@ html, body {
   color: var(--text);
 }
 
-/* ── HOME — Hero ── */
+
 .hero {
   min-height: 100vh;
   background-image: url('Images/pexels-stywo-1668246.jpg');
@@ -182,7 +176,7 @@ html, body {
   letter-spacing: -0.01em;
 }
 
-/* ── DEFINICIONS — layout ── */
+
 .def-wrapper {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -274,7 +268,7 @@ html, body {
   transform: translateY(-3px);
 }
 
-/* ── EXERCICIS / MATH-AI — green card ── */
+
 .exercise-box,
 .chat-box {
   background: var(--green-card);
@@ -291,7 +285,7 @@ html, body {
   letter-spacing: 0.02em;
 }
 
-/* ── CONTACTE — form inside green card ── */
+
 .contact-card {
   background: var(--green-card);
   border-radius: var(--radius-card);
@@ -359,7 +353,7 @@ html, body {
   padding-bottom: 6px;
 }
 
-/* ── Navigation Buttons ── */
+
 .nav-buttons {
   display: flex;
   gap: 20px;
@@ -389,7 +383,6 @@ button#btn-next:hover {
   transform: translateY(-2px);
 }
 
-/* ── Chatbot widget (Math-AI) ── */
 #chat-toggle {
   position: fixed;
   bottom: 28px;
