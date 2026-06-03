@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
-  <title>Open-RAY - Exercicis</title>
+  <title>Open-RAY - Contacte</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,25 +14,80 @@
     <span data-link="definicions">DEFINICIONS</span>
     <span data-link="tutorials">TUTORIALS</span>
     <span data-link="exercicis">EXERCICIS</span>
-    <span data-link="contacte">CONTACTE</span>
+    <span data-link="contacte" class="active">CONTACTE</span>
     <span data-link="mathai">MATH-AI</span>
   </nav>
 </header>
 
 <main class="page">
-  <h1>Exercicis</h1>
+  <h1>Contacte</h1>
 
-  <div class="exercise-box">
-    <p>Aquí aniran els exercicis interactius.</p>
+  <div class="contact-card">
+    <div class="contact-form">
+
+      <p class="form-section-title">Sol·licitant</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Cognoms</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>DNI</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Direcció</label>
+          <input type="text" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>CP</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Població</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Província</label>
+          <input type="text" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Telèfon</label>
+          <input type="tel" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="">
+        </div>
+      </div>
+
+      <p class="form-section-title" style="margin-top:20px;">Exposició de fets</p>
+      <div class="form-group">
+        <textarea rows="4"></textarea>
+      </div>
+
+    </div>
   </div>
 
   <div class="nav-buttons">
     <button id="btn-prev">Anterior</button>
-    <button id="btn-next">Següent</button>
   </div>
 </main>
 
 <script src="script.js"></script>
 </body>
 </html>
-
