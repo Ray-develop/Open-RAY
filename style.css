@@ -1,46 +1,517 @@
-<!DOCTYPE html>
-body {
+/* =============================================
+   Open-RAY — style.css
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Variables ── */
+:root {
+  --bg:          #0a0a0a;
+  --nav-bg:      #1a2b3c;
+  --green-card:  #7aad76;
+  --green-btn:   #4e8c2a;
+  --green-btn-h: #3d7020;
+  --text:        #ffffff;
+  --text-muted:  #b0b8c1;
+  --radius-nav:  50px;
+  --radius-card: 24px;
+  --radius-btn:  50px;
+  --font-title:  'Syne', sans-serif;
+  --font-body:   'DM Sans', sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── Navbar ── */
+.topbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 64px);
+  max-width: 1200px;
+  background: var(--nav-bg);
+  border-radius: var(--radius-nav);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--text);
+  border-radius: 8px;
+  background: transparent;
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 3px,
+    rgba(255,255,255,0.15) 3px, rgba(255,255,255,0.15) 4px
+  );
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav span {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav span:hover,
+.nav span.active {
+  background: rgba(255,255,255,0.1);
+  color: var(--text);
+}
+
+/* ── HOME — Hero ── */
+.hero {
+  min-height: 100vh;
   background-image: url('Images/pexels-stywo-1668246.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 32px 60px;
+  position: relative;
 }
 
-<html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <title>Open-RAY - Math-AI</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,10,0.15) 0%,
+    rgba(10,10,10,0.45) 60%,
+    rgba(10,10,10,0.75) 100%
+  );
+}
 
-<header class="topbar">
-  <div class="logo" data-link="home">OPEN-RAY</div>
-  <nav class="nav">
-    <span data-link="home">HOME</span>
-    <span data-link="definicions">DEFINICIONS</span>
-    <span data-link="tutorials">TUTORIALS</span>
-    <span data-link="exercicis">EXERCICIS</span>
-    <span data-link="contacte">CONTACTE</span>
-    <span data-link="mathai">MATH-AI</span>
-  </nav>
-</header>
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-<main class="page">
-  <h1>Math-AI</h1>
+.hero-title {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
 
-  <div class="chat-box">
-    <p>Aquí anirà el chatbot matemàtic.</p>
-  </div>
+.hero-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.25rem;
+  padding: 10px 36px;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+}
 
-  <div class="nav-buttons">
-    <button id="btn-prev">Anterior</button>
-    <button id="btn-next">Següent</button>
-  </div>
-</main>
+.hero-text {
+  max-width: 560px;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+/* ── INNER PAGES — base ── */
+.page {
+  min-height: 100vh;
+  padding: 110px 40px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
+.page h1 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+/* ── DEFINICIONS — layout ── */
+.def-wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.def-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.def-sidebar li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-muted);
+  cursor: default;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.2s;
+}
+
+.def-sidebar li:hover { color: var(--text); }
+
+.def-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.def-content li {
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.def-content li strong {
+  color: var(--text);
+}
+
+.def-footer {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: end;
+  margin-top: 40px;
+}
+
+.def-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: rgba(255,255,255,0.07);
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border: 1px dashed rgba(255,255,255,0.15);
+}
+
+/* ── TUTORIALS — video grid ── */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.video-box {
+  aspect-ratio: 4/3;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.video-box:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-3px);
+}
+
+/* ── EXERCICIS / MATH-AI — green card ── */
+.exercise-box,
+.chat-box {
+  background: var(--green-card);
+  border-radius: var(--radius-card);
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  padding: 32px;
+  letter-spacing: 0.02em;
+}
+
+/* ── CONTACTE — form inside green card ── */
+.contact-card {
+  background: var(--green-card);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  color: #111;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  border: none;
+  border-bottom: 1px dotted #aaa;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 6px 0;
+  background: transparent;
+  color: #111;
+  width: 100%;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  border: 1px dotted #aaa;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.form-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+
+/* ── Navigation Buttons ── */
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.nav-buttons button,
+button#btn-prev,
+button#btn-next {
+  background: var(--green-btn);
+  color: var(--text);
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 14px 40px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.nav-buttons button:hover,
+button#btn-prev:hover,
+button#btn-next:hover {
+  background: var(--green-btn-h);
+  transform: translateY(-2px);
+}
+
+/* ── Chatbot widget (Math-AI) ── */
+#chat-toggle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--green-btn);
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  transition: background 0.2s;
+  z-index: 200;
+}
+
+#chat-toggle:hover { background: var(--green-btn-h); }
+
+#chatbot-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 28px;
+  width: 340px;
+  background: #1a2b3c;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 200;
+}
+
+#chat-header {
+  background: var(--green-btn);
+  color: #fff;
+  padding: 12px 20px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+#chat-body {
+  padding: 16px;
+  height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.message.bot {
+  background: rgba(255,255,255,0.1);
+  color: var(--text);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.message.user {
+  background: var(--green-btn);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+#chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.2);
+}
+
+#user-input {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  outline: none;
+}
+
+#user-input::placeholder { color: rgba(255,255,255,0.35); }
+
+#chat-input button {
+  background: var(--green-btn);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+#chat-input button:hover { background: var(--green-btn-h); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .topbar {
+    width: calc(100% - 24px);
+    padding: 10px 16px;
+    border-radius: 16px;
+  }
+  .nav { gap: 4px; }
+  .nav span { font-size: 0.7rem; padding: 5px 8px; }
+
+  .page { padding: 100px 20px 48px; }
+
+  .def-wrapper,
+  .def-footer { grid-template-columns: 1fr; }
+
+  .video-grid { grid-template-columns: 1fr; }
+
+  .form-row { grid-template-columns: 1fr; }
+}
